@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Modern Pastel Palette */
+  /* Primary - Soft Blue */
+  --primary-color: #A0C4FF; 
+  --primary-text: #2B4C7E;
+  --primary-bg: #E6F0FF;
+  --primary-hover: #8AB4F8;
+  
+  /* Secondary - Lavender */
+  --secondary-color: #BDB2FF;
+  --secondary-text: #4A3F7D;
+  --secondary-bg: #F2EEFF;
+  
+  /* Success - Mint */
+  --success-color: #CAFFBF;
+  --success-text: #2F6B28;
+  --success-bg: #F0FFF0;
+  
+  /* Danger - Soft Red */
+  --danger-color: #FFADAD;
+  --danger-text: #8B2E2E;
+  --danger-bg: #FFF0F0;
+  
+  /* Warning - Creamy Yellow */
+  --warning-color: #FDFFB6;
+  --warning-text: #857F26;
+  --warning-bg: #FFFFF0;
+  
+  /* Neutrals */
+  --background-color: #FDFBF7; /* Warm Cream */
+  --surface-color: #FFFFFF;
+  
+  /* Text */
+  --text-primary: #2D3436;
+  --text-secondary: #636E72;
+  --text-light: #B2BEC3;
+  
+  /* UI Elements */
+  --border-color: #F0F0F0;
+  
+  /* Shapes */
+  --border-radius-sm: 12px;
+  --border-radius-md: 20px;
+  --border-radius-lg: 32px;
+  
+  /* Shadows - Soft & Diffused */
+  --shadow-sm: 0 2px 8px rgba(149, 157, 165, 0.1);
+  --shadow-md: 0 8px 24px rgba(149, 157, 165, 0.15);
+  --shadow-lg: 0 16px 48px rgba(149, 157, 165, 0.2);
+  
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E0E0E0; 
+  border-radius: 5px;
+  border: 2px solid var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C0C0C0; 
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-text);
+  transition: color var(--transition-speed);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}

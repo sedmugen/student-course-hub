@@ -1,0 +1,220 @@
+/* Global Layout */
+.container {
+  max-width: 1200px;
+  padding: 3rem 1.5rem;
+}
+
+/* Glassmorphism Navbar */
+.navbar-custom {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary) !important;
+  letter-spacing: -0.03em;
+}
+
+.nav-link {
+  color: var(--text-secondary) !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--border-radius-sm);
+  padding: 0.6rem 1.2rem !important;
+  margin: 0 0.3rem;
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: var(--primary-bg);
+  color: var(--primary-text) !important;
+  transform: translateY(-1px);
+}
+
+/* Elegant Card Styling */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: var(--border-radius-md);
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.card-header {
+  background-color: rgba(253, 251, 247, 0.5);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* Modern Buttons */
+.btn {
+  border-radius: 14px;
+  padding: 0.7rem 1.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--primary-text);
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(160, 196, 255, 0.4);
+}
+
+.btn-outline-primary {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+  transform: scale(1.03);
+}
+
+/* Modern Forms */
+.form-control, .form-select {
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  padding: 0.8rem 1.2rem;
+  background-color: #FAFAFA;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--surface-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-bg);
+}
+
+.form-label {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+/* Minimal Tables */
+.table-responsive {
+  border-radius: var(--border-radius-md);
+  background-color: var(--surface-color);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 1.2rem 1.5rem;
+  background-color: #FAFAFA;
+}
+
+.table tbody td {
+  padding: 1.2rem 1.5rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #FAFAFA !important;
+}
+
+/* Modern Badges */
+.badge {
+  padding: 0.6em 1em;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.bg-primary { background-color: var(--primary-bg) !important; color: var(--primary-text) !important; }
+.bg-success { background-color: var(--success-bg) !important; color: var(--success-text) !important; }
+.bg-danger { background-color: var(--danger-bg) !important; color: var(--danger-text) !important; }
+.bg-warning { background-color: var(--warning-bg) !important; color: var(--warning-text) !important; }
+.bg-info { background-color: var(--secondary-bg) !important; color: var(--secondary-text) !important; }
+
+/* Custom Pastel Card Variations */
+.card-pastel-blue { background-color: var(--primary-bg); border-left: 6px solid var(--primary-color); }
+.card-pastel-green { background-color: var(--success-bg); border-left: 6px solid var(--success-color); }
+.card-pastel-purple { background-color: var(--secondary-bg); border-left: 6px solid var(--secondary-color); }
+.card-pastel-orange { background-color: var(--warning-bg); border-left: 6px solid var(--warning-color); }
+
+/* Auth Layout */
+.auth-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FDFBF7 0%, #E6F0FF 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.auth-header h2 {
+  font-weight: 800;
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Spinner */
+.spinner-border {
+  color: var(--primary-color);
+  width: 3rem;
+  height: 3rem;
+}
