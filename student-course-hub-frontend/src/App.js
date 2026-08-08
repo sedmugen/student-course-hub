@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import './App.css';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -26,10 +27,13 @@ import GradesPage from './pages/student/GradesPage';
 import AcademicProgressPage from './pages/student/AcademicProgressPage';
 
 function App() {
+  const location = useLocation();
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
+
   return (
     <>
-      <Navbar />
-      <div className="container mt-4">
+      {!isAuthPage && <Navbar />}
+      <div className={isAuthPage ? '' : 'container mt-4'}>
         <Routes>
           {/* Public routes */}
           <Route path="/login" element={<LoginPage />} />

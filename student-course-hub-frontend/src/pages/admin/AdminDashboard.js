@@ -49,7 +49,7 @@ const AdminDashboard = () => {
     return (
         <Container>
             <div className="mb-5">
-                <h2 className="mb-2 fw-bold" style={{ color: 'var(--text-primary)' }}>Dashboard Overview</h2>
+                <h2 className="mb-2 fw-bold">Dashboard Overview</h2>
                 <p className="text-muted">Welcome back, Administrator</p>
             </div>
 
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
                                 <h1 className="display-4 fw-bold mt-2 mb-0">{stats.sections}</h1>
                             </div>
                             <div className="mt-3">
-                                <Link to="/admin/sections" className="btn btn-sm btn-light text-secondary-color rounded-pill fw-bold" style={{ color: 'var(--secondary-color)' }}>
+                                <Link to="/admin/sections" className="btn btn-sm btn-light rounded-pill fw-bold">
                                     Manage Sections
                                 </Link>
                             </div>

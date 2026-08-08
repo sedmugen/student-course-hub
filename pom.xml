@@ -8,8 +8,8 @@
         <version>4.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>io.saadmughal</groupId>
-    <artifactId>student-course-hub</artifactId>
+    <groupId>io.khadijah</groupId>
+    <artifactId>smart-course-hub</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>student-course-hub</name>
     <description>student-course-hub</description>

@@ -28,7 +28,7 @@ const InstructorDashboard = () => {
     return (
         <Container>
             <div className="mb-5">
-                <h2 className="mb-2 fw-bold" style={{ color: 'var(--text-primary)' }}>Instructor Dashboard</h2>
+                <h2 className="mb-2 fw-bold">Instructor Dashboard</h2>
                 <p className="text-muted">Manage your courses and students</p>
             </div>
 
