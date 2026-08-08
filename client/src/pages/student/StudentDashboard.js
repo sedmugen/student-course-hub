@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Table, ProgressBar } from 'react-bootstrap';
+import { Container, Row, Col, Card, ProgressBar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { studentAPI } from '../../api/axiosClient';
 import { useAuth } from '../../context/AuthContext';
@@ -21,7 +21,7 @@ const StudentDashboard = () => {
                 setEnrollments(enrollmentsRes.data.data || []);
                 setAttendanceSummary(attendanceRes.data.data || []);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                // Ignore silent fetch errors for dashboard widgets
             } finally {
                 setLoading(false);
             }

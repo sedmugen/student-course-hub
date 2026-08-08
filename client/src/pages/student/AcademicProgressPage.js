@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Table, Card, Row, Col, Badge, Alert, Form } from 'react-bootstrap';
 import { studentAPI } from '../../api/axiosClient';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -10,13 +10,12 @@ const AcademicProgressPage = () => {
     const [semesters, setSemesters] = useState([]);
     const [selectedSemester, setSelectedSemester] = useState('ALL');
 
-    const fetchProgress = async (semester = 'ALL') => {
+    const fetchProgress = useCallback(async (semester = 'ALL') => {
         setLoading(true);
         try {
             let response;
             if (semester === 'ALL') {
                 response = await studentAPI.getAcademicProgress();
-                // Extract unique semesters only on initial load or if we want to keep them persistent
                 if (semesters.length === 0 && response.data.data.courseGrades) {
                     const uniqueSemesters = [...new Set(response.data.data.courseGrades.map(c => c.semester))];
                     setSemesters(uniqueSemesters.sort());
@@ -30,11 +29,11 @@ const AcademicProgressPage = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [semesters.length]);
 
     useEffect(() => {
         fetchProgress();
-    }, []);
+    }, [fetchProgress]);
 
     const handleSemesterChange = (e) => {
         const semester = e.target.value;
@@ -54,7 +53,6 @@ const AcademicProgressPage = () => {
     if (error) return <Alert variant="danger">{error}</Alert>;
     if (!progress) return <Alert variant="info">No academic progress data available</Alert>;
 
-    // Calculate Grade Distribution for Chart
     const gradeCounts = { 'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0 };
     progress.courseGrades?.forEach(c => {
         const baseGrade = c.letterGrade.charAt(0);
@@ -62,7 +60,7 @@ const AcademicProgressPage = () => {
             gradeCounts[baseGrade]++;
         }
     });
-    const maxCount = Math.max(...Object.values(gradeCounts), 1); // Avoid division by zero
+    const maxCount = Math.max(...Object.values(gradeCounts), 1);
 
     return (
         <Container>

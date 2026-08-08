@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Table, Button, Modal, Form, Alert, Badge, Card } from 'react-bootstrap';
 import { usersAPI } from '../../api/axiosClient';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -17,7 +17,7 @@ const UsersPage = () => {
         role: 'STUDENT'
     });
 
-    const fetchUsers = async () => {
+    const fetchUsers = useCallback(async () => {
         setLoading(true);
         try {
             let response;
@@ -32,11 +32,11 @@ const UsersPage = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [filterRole]);
 
     useEffect(() => {
         fetchUsers();
-    }, [filterRole]);
+    }, [fetchUsers]);
 
     const handleShowModal = (user = null) => {
         if (user) {

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Table, Button, Modal, Form, Alert, Card, Row, Col } from 'react-bootstrap';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Container, Table, Button, Modal, Form, Alert, Card } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { instructorAPI } from '../../api/axiosClient';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -23,7 +23,7 @@ const AssignmentsPage = () => {
         deadline: ''
     });
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             if (sectionId) {
                 const [assignmentsRes, sectionRes] = await Promise.all([
@@ -41,11 +41,11 @@ const AssignmentsPage = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [sectionId]);
 
     useEffect(() => {
         fetchData();
-    }, [sectionId]);
+    }, [fetchData]);
 
     const filteredAssignments = assignments.filter(assignment => 
         assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -118,11 +118,9 @@ const AssignmentsPage = () => {
             });
             setGrades(initialGrades);
 
-            // Also get all students from section
             const studentsRes = await instructorAPI.getSectionStudents(assignment.sectionId);
             const allStudents = studentsRes.data.data || [];
 
-            // Merge with submissions
             const mergedSubmissions = allStudents.map(student => {
                 const existing = (response.data.data || []).find(s => s.studentId === student.studentId);
                 return {

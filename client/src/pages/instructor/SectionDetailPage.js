@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, Table, Row, Col, Button, Modal, Form, Alert, ListGroup, Badge } from 'react-bootstrap';
+import { Container, Card, Table, Row, Col, Button, Modal, Form, Alert } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { instructorAPI } from '../../api/axiosClient';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -34,8 +34,7 @@ const SectionDetailPage = () => {
                 setSection(sectionRes.data.data);
                 setStudents(studentsRes.data.data || []);
                 setSessions(sessionsRes.data.data || []);
-            } catch (error) {
-                console.error(error);
+            } catch (err) {
                 setError('Failed to fetch section details');
             } finally {
                 setLoading(false);
@@ -48,8 +47,8 @@ const SectionDetailPage = () => {
     const handleGenerateSessions = async () => {
         if (!weekStartDate) return;
         try {
-            const res = await instructorAPI.generateSessions(sectionId, weekStartDate);
-            // Re-fetch sessions to get all (including duplicates/new ones correctly ordered)
+            await instructorAPI.generateSessions(sectionId, weekStartDate);
+            // Re-fetch sessions to get all
             const sessionsRes = await instructorAPI.getSessions(sectionId);
             setSessions(sessionsRes.data.data);
             setSuccess('Sessions generated successfully');
