@@ -9,24 +9,16 @@
 
 ---
 
-## 1. Visual Demo & Previews
+## 1. Visual Demo & Screenshots
 
-```
-                  ┌─────────────────────────────────────────────────────────┐
-                  │                 Student Course Hub Portal               │
-                  └────────────────────────────┬────────────────────────────┘
-                                               │
-             ┌─────────────────────────────────┼─────────────────────────────────┐
-             │                                 │                                 │
-  ┌──────────▼──────────┐           ┌──────────▼──────────┐           ┌──────────▼──────────┐
-  │   Admin Portal      │           │  Instructor Portal  │           │   Student Portal    │
-  │ • User CRUD & Status│           │ • Section Rosters   │           │ • Catalog & Enrolls │
-  │ • Course Catalogs   │           │ • Attendance Sheet  │           │ • Assignment Views  │
-  │ • Section Schedules │           │ • Grade Submissions │           │ • GPA Calculator    │
-  └─────────────────────┘           └─────────────────────┘           └─────────────────────┘
-```
+### 🛠️ Administrator Management Portal
+![Administrator Portal Dashboard](assets/images/admin_dashboard.jpg)
 
-> **Note:** Screenshots and interactive GIF demonstrations will be populated under [`assets/images/`](assets/images) and [`assets/gifs/`](assets/gifs).
+### 👩‍🏫 Instructor Section & Attendance Portal
+![Instructor Attendance Portal](assets/images/instructor_attendance.jpg)
+
+### 🎓 Student Academic Progress & GPA Dashboard
+![Student Academic Progress Dashboard](assets/images/student_progress.jpg)
 
 ---
 

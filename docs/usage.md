@@ -16,6 +16,8 @@ This document outlines the core workflows for Administrators, Instructors, and S
 
 ## 1. System Administrator Workflow
 
+![Administrator Portal Dashboard](../assets/images/admin_dashboard.jpg)
+
 ### User Account Management
 1. Log in with admin credentials (`admin@smartcoursehub.com` / `admin123`).
 2. Navigate to **User Management** (`/admin/users`).
@@ -29,6 +31,8 @@ This document outlines the core workflows for Administrators, Instructors, and S
 ---
 
 ## 2. Faculty Instructor Workflow
+
+![Instructor Attendance Portal](../assets/images/instructor_attendance.jpg)
 
 ### Managing Section Rosters & Attendance
 1. Log in with instructor credentials.
@@ -45,6 +49,8 @@ This document outlines the core workflows for Administrators, Instructors, and S
 ---
 
 ## 3. Enrolled Student Workflow
+
+![Student Academic Progress Dashboard](../assets/images/student_progress.jpg)
 
 ### Course Registration & Drop
 1. Log in with student credentials.
