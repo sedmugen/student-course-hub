@@ -144,9 +144,12 @@ Upon startup, the system seeds a default system administrator account and loads 
 
 ## 8. Documentation
 
-- 📐 [Architecture Documentation](docs/architecture.md)
+- 📐 [Architecture Overview](docs/architecture.md)
 - 🔌 [API Specification](docs/api.md)
-- 💡 [Architecture Decisions](docs/decisions.md)
+- 🛠️ [Installation & Setup Guide](docs/setup.md)
+- 📖 [User & Workflows Guide](docs/usage.md)
+- 💻 [Developer & Contribution Guide](docs/development.md)
+- 💡 [Architecture Decisions (ADRs)](docs/decisions.md)
 
 ---
 
