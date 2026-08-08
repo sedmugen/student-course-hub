@@ -1,5 +1,5 @@
 {
-  "name": "student-course-hub-frontend",
+  "name": "student-course-hub-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

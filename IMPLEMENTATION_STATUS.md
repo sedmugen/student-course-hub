@@ -55,95 +55,37 @@
 - [x] `AcademicProgressService.java` - GPA calculation
 - [x] `AcademicProgressController.java` (`/api/student/academic-progress/**`)
 
-### Other Backend Components
-- [x] `GlobalExceptionHandler.java` - Error handling
-- [x] `ApiResponse.java` - Standard API response wrapper
-- [x] `InstructorController.java` - Instructor section/student endpoints
-- [x] All DTOs and VOs updated
-
 ---
 
-## COMPLETED - Frontend (Structure & Components)
+## COMPLETED - Frontend (100%)
 
-### Dependencies Installed
-- [x] axios
-- [x] react-router-dom
-- [x] bootstrap
-- [x] react-bootstrap
+### Core Infrastructure
+- [x] `client/src/api/axiosClient.js` - API client with all endpoints
+- [x] `client/src/context/AuthContext.js` - Authentication state management
+- [x] `client/src/components/Navbar.js` - Navigation bar
+- [x] `client/src/components/ProtectedRoute.js` - Route protection
+- [x] `client/src/components/LoadingSpinner.js` - Loading indicator
 
-### Core Components Created
-- [x] `src/api/axiosClient.js` - API client with all endpoints
-- [x] `src/context/AuthContext.js` - Authentication state management
-- [x] `src/components/Navbar.js` - Navigation bar
-- [x] `src/components/ProtectedRoute.js` - Route protection
-- [x] `src/components/LoadingSpinner.js` - Loading indicator
-
-### Pages Created
-- [x] `src/pages/LoginPage.js`
-- [x] `src/pages/RegisterPage.js`
-- [x] `src/pages/admin/AdminDashboard.js`
-- [x] `src/pages/admin/UsersPage.js`
-- [x] `src/pages/admin/CoursesPage.js`
-- [x] `src/pages/admin/SectionsPage.js`
-- [x] `src/pages/instructor/InstructorDashboard.js`
-- [x] `src/pages/instructor/SectionDetailPage.js`
-- [x] `src/pages/instructor/AssignmentsPage.js`
-- [x] `src/pages/student/StudentDashboard.js`
-- [x] `src/pages/student/AvailableCoursesPage.js`
-- [x] `src/pages/student/MyEnrollmentsPage.js`
-- [x] `src/pages/student/GradesPage.js`
-- [x] `src/pages/student/AcademicProgressPage.js`
-
----
-
-## REMAINING - Frontend (Critical)
-
-### Must Complete
-1. **Update `App.js`** - Add React Router configuration with all routes
-2. **Update `index.js`** - Wrap with AuthProvider and BrowserRouter
-3. **Add Bootstrap CSS import** - In index.js or App.js
-
-### App.js Should Include These Routes:
-```jsx
-// Public routes
-<Route path="/login" element={<LoginPage />} />
-<Route path="/register" element={<RegisterPage />} />
-
-// Admin routes
-<Route path="/admin" element={<ProtectedRoute allowedRoles={['ADMIN']}><AdminDashboard /></ProtectedRoute>} />
-<Route path="/admin/users" element={<ProtectedRoute allowedRoles={['ADMIN']}><UsersPage /></ProtectedRoute>} />
-<Route path="/admin/courses" element={<ProtectedRoute allowedRoles={['ADMIN']}><CoursesPage /></ProtectedRoute>} />
-<Route path="/admin/sections" element={<ProtectedRoute allowedRoles={['ADMIN']}><SectionsPage /></ProtectedRoute>} />
-
-// Instructor routes
-<Route path="/instructor" element={<ProtectedRoute allowedRoles={['INSTRUCTOR']}><InstructorDashboard /></ProtectedRoute>} />
-<Route path="/instructor/sections" element={<ProtectedRoute allowedRoles={['INSTRUCTOR']}><InstructorDashboard /></ProtectedRoute>} />
-<Route path="/instructor/sections/:sectionId" element={<ProtectedRoute allowedRoles={['INSTRUCTOR']}><SectionDetailPage /></ProtectedRoute>} />
-<Route path="/instructor/sections/:sectionId/assignments" element={<ProtectedRoute allowedRoles={['INSTRUCTOR']}><AssignmentsPage /></ProtectedRoute>} />
-<Route path="/instructor/assignments" element={<ProtectedRoute allowedRoles={['INSTRUCTOR']}><AssignmentsPage /></ProtectedRoute>} />
-
-// Student routes
-<Route path="/student" element={<ProtectedRoute allowedRoles={['STUDENT']}><StudentDashboard /></ProtectedRoute>} />
-<Route path="/student/courses" element={<ProtectedRoute allowedRoles={['STUDENT']}><AvailableCoursesPage /></ProtectedRoute>} />
-<Route path="/student/enrollments" element={<ProtectedRoute allowedRoles={['STUDENT']}><MyEnrollmentsPage /></ProtectedRoute>} />
-<Route path="/student/grades" element={<ProtectedRoute allowedRoles={['STUDENT']}><GradesPage /></ProtectedRoute>} />
-<Route path="/student/progress" element={<ProtectedRoute allowedRoles={['STUDENT']}><AcademicProgressPage /></ProtectedRoute>} />
-```
+### Wired Pages & Routes
+- [x] Public Auth: Login, Register
+- [x] Admin Portal: Dashboard, Users, Courses, Sections
+- [x] Instructor Portal: Dashboard, Section Details, Assignments
+- [x] Student Portal: Dashboard, Available Courses, Enrollments, Grades, Progress
 
 ---
 
 ## HOW TO RUN
 
-### Backend
+### Backend Server
 ```bash
-cd student-course-hub
+cd server
 ./mvnw spring-boot:run
 # Runs on http://localhost:8080
 ```
 
-### Frontend
+### Frontend Client
 ```bash
-cd student-course-hub-frontend
+cd client
 npm start
 # Runs on http://localhost:3000
 ```
@@ -153,21 +95,4 @@ npm start
 ## DATABASE
 - MySQL database: `smartcoursehub_db`
 - Auto-created on startup
-- DDL auto: `create` (tables recreated on each run - change to `update` for production)
-
----
-
-## NOTES FOR NEXT AGENT
-
-1. The backend is COMPLETE and should work out of the box
-2. Frontend pages are created but need to be wired up in App.js
-3. All API calls are already configured in `axiosClient.js`
-4. Authentication context is ready in `AuthContext.js`
-5. pom.xml has been updated to use `spring-boot-starter-security`
-6. Test by:
-   - Start backend
-   - Start frontend
-   - Login with admin@smartcoursehub.com / admin123
-   - Create users, courses, sections
-   - Test student enrollment
-   - Test instructor attendance/grades
+- DDL auto: `update` (preserves persistent data)
